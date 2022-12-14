@@ -1,4 +1,4 @@
-	how to create repo
+how to create repo
 
     1. За стандартен средно голям проект си създаваме две папки - frontEnd and beckEnd.
 
@@ -10,3 +10,10 @@
 		- open vs code console -> git init -> "git status" -> git add * (will add all folders) -> git commit -m "Initial commit" ->
 		- go to GitHub -> create repository
 		- take commands for - push an existing repository from the command line
+
+How to give access to another git account in GitHub
+
+	1. Navigate to the main page of the repository,
+	2. Under repository name, click 'Settings',
+	3. In the 'Access' section of the sidebar -> click 'Collaborators &t teams.
+	4. click 'Invite a collaborator'.
