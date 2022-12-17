@@ -19,7 +19,13 @@ How to give access to another git account in GitHub
 	4. click 'Invite a collaborator'.
 
 Create react app
-	
+
 	1. npx create-react-app . ro my-appName;
 
 		We need to have node.js installed in order to to this command;
+
+Adding Basic CSS styling
+
+	Basically add css file next the js file with the same name as the component but with '.css' in the end;
+
+	In the js file we need to import css file; 'import "./Name.css"
