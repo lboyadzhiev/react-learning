@@ -29,3 +29,13 @@ Adding Basic CSS styling
 	Basically add css file next the js file with the same name as the component but with '.css' in the end;
 
 	In the js file we need to import css file; 'import "./Name.css"
+
+	For adding more than one class in wrapper component:
+
+		create variable for classes,
+
+		const classes = 'someName ' + props.classes;
+
+		and add the classes dinamicaly 
+
+		className={classes}
