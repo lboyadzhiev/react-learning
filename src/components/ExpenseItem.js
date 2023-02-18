@@ -1,3 +1,5 @@
+import React from "react";
+
 // style
 import "./ExpenseItem.css";
 

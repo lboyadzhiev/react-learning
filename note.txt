@@ -39,3 +39,12 @@ Adding Basic CSS styling
 		and add the classes dinamicaly 
 
 		className={classes}
+
+	How React create elements: 
+
+		React.createElement():
+
+			it takes three arguments:
+				1. the HTML element that we whant to create,
+				2. the arguments wich specify the html element - classes,props, etc,
+				3. is the content wich we whant to add.

@@ -1,3 +1,6 @@
+import React from "react";
+
+// style
 import "./Expenses.css";
 
 // components
