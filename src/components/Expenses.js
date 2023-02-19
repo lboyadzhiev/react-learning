@@ -27,6 +27,12 @@ const Expenses = () => {
       amount: 50.0,
       date: new Date(2022, 12, 17),
     },
+    {
+      id: 4,
+      title: "makarony",
+      amount: 3.0,
+      date: new Date(2023, 2, 19),
+    },
   ];
 
   return (
@@ -34,6 +40,7 @@ const Expenses = () => {
       {expenses.map((item) => {
         return (
           <ExpenseItem
+            key={item.id}
             title={item.title}
             date={item.date}
             amount={item.amount}

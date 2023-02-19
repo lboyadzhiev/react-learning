@@ -48,3 +48,16 @@ Adding Basic CSS styling
 				1. the HTML element that we whant to create,
 				2. the arguments wich specify the html element - classes,props, etc,
 				3. is the content wich we whant to add.
+
+	React State & Working with Events
+
+		React it follow declarative aproach, where in the end we define the disired target state and let React fegure out the actual JS DOM instructions.
+
+		Module Content 
+
+			Handlin Events;
+			Updating the UI & Working with 'State';
+
+		In the end our component is a function, we need to call it, so that is why when we write just a variable and try to change the variable, nothin is changin, becuase our function is not being call. That is why we use a special function called state.
+
+		State is separated by per component instance. 
