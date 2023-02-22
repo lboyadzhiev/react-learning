@@ -61,3 +61,7 @@ Adding Basic CSS styling
 		In the end our component is a function, we need to call it, so that is why when we write just a variable and try to change the variable, nothin is changin, becuase our function is not being call. That is why we use a special function called state.
 
 		State is separated by per component instance. 
+
+		! Updating a state that depends on the prev state:
+
+			When ever we want to change a state which depend on prev state we are doing it by passing a function into updatin State function, and pass as an argument the prev state.
