@@ -79,3 +79,7 @@ Adding Basic CSS styling
 		! Updating a state that depends on the prev state:
 
 			When ever we want to change a state which depend on prev state we are doing it by passing a function into updatin State function, and pass as an argument the prev state.
+
+	Dynamic content
+
+		We can store JSX conten in variable;
