@@ -12,8 +12,6 @@ function App() {
     });
   };
 
-  console.log(expenses);
-
   return (
     <div>
       <h2>Let's get started!</h2>

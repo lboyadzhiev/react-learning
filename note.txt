@@ -11,6 +11,20 @@ how to create repo
 		- go to GitHub -> create repository
 		- take commands for - push an existing repository from the command line
 
+Wokring with GitHub
+
+	1. Create New Branch from current branch:
+		-- git checkout -b name_of_the_new_branch;
+	
+	2. Switch to a branch:
+
+		-- git checkout name_of_the_branch;
+
+	3. Pull from branch 
+
+		-- git pull name of the branch;
+
+		
 How to give access to another git account in GitHub
 
 	1. Navigate to the main page of the repository,
