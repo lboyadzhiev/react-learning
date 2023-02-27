@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import './Expenses.css';
 
 // components
-import ExpenseItem from './ExpenseItem';
+import ExpensesList from './ExpensesList';
 import ExpenseFilter from './ExpenseFilter';
+import ExpensesChart from './ExpensesChart';
 import Card from '../UI/Card';
 
 const Expenses = ({ expenses }) => {
@@ -19,28 +20,14 @@ const Expenses = ({ expenses }) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
-  let expensesContent = <p>No expenses found.</p>;
-
-  if (filteredExpenses.length > 0) {
-    expensesContent = filteredExpenses.map((expense) => {
-      return (
-        <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          date={expense.date}
-          amount={expense.amount}
-        />
-      );
-    });
-  }
-
   return (
     <Card className='expenses'>
       <ExpenseFilter
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {expensesContent}
+      <ExpensesChart expenses={filteredExpenses} />
+      <ExpensesList items={filteredExpenses} />
     </Card>
   );
 };

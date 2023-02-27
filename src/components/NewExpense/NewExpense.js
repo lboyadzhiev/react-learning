@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ExpenseDate from '../Expenses/ExpenseDate';
 
 // style
@@ -8,6 +8,8 @@ import './NewExpense.css';
 import ExpenseForm from './ExpenseForm';
 
 const NewExpense = ({ onAddExpense }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
@@ -17,9 +19,23 @@ const NewExpense = ({ onAddExpense }) => {
     onAddExpense(expenseData);
   };
 
+  const closeFormHandler = () => {
+    setIsOpen(false);
+  };
+
+  const openFormHandler = () => {
+    setIsOpen(true);
+  };
+
   return (
     <div className='new-expense'>
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+      {isOpen && (
+        <ExpenseForm
+          onSaveExpenseData={saveExpenseDataHandler}
+          onCloseForm={closeFormHandler}
+        />
+      )}
+      {!isOpen && <button onClick={openFormHandler}>Add New Expense</button>}
     </div>
   );
 };
