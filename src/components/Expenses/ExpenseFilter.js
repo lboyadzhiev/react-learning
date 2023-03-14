@@ -1,7 +1,7 @@
 import React from 'react';
 
 // styles
-import './ExpenseFilter.css';
+import classes from './ExpenseFilter.module.css';
 
 const ExpenseFilter = ({ selected, onChangeFilter }) => {
   const dropdownChangeHandler = (event) => {
@@ -9,8 +9,8 @@ const ExpenseFilter = ({ selected, onChangeFilter }) => {
   };
 
   return (
-    <div className='expense-filter'>
-      <div className='expense-filter__control'>
+    <div className={classes['expense-filter']}>
+      <div className={classes['expense-filter__control']}>
         <label>Filter by year</label>
         <select value={selected} onChange={dropdownChangeHandler}>
           <option value='2023'>2023</option>

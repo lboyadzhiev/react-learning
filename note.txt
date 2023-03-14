@@ -82,4 +82,4 @@ Adding Basic CSS styling
 
 	Dynamic content
 
-		We can store JSX conten in variable;
+		We can store JSX conten in variable;c

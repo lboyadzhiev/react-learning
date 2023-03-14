@@ -1,7 +1,7 @@
 import React from 'react';
 
 // styles
-import './ChartBar.css';
+import classes from './ChartBar.module.css';
 
 const ChartBar = ({ value, maxValue, label }) => {
   let barFillHeight = '0%';
@@ -11,14 +11,14 @@ const ChartBar = ({ value, maxValue, label }) => {
   }
 
   return (
-    <div className='chart-bar'>
-      <div className='chart-bar__inner'>
+    <div className={classes['chart-bar']}>
+      <div className={classes['chart-bar__inner']}>
         <div
-          className='chart-bar__fill'
+          className={classes['chart-bar__fill']}
           style={{ height: barFillHeight }}
         ></div>
       </div>
-      <div className='chart-bar__label'>{label}</div>
+      <div className={classes['chart-bar__label']}>{label}</div>
     </div>
   );
 };

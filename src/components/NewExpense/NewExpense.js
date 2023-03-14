@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ExpenseDate from '../Expenses/ExpenseDate';
 
 // style
-import './NewExpense.css';
+import classes from './NewExpense.module.css';
 
 // components
 import ExpenseForm from './ExpenseForm';
@@ -28,7 +28,7 @@ const NewExpense = ({ onAddExpense }) => {
   };
 
   return (
-    <div className='new-expense'>
+    <div className={classes['new-expense']}>
       {isOpen && (
         <ExpenseForm
           onSaveExpenseData={saveExpenseDataHandler}

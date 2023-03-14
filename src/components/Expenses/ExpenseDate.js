@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 
 // styles
-import "./ExpenseDate.css";
+import classes from './ExpenseDate.module.css';
 
 const ExpenseDate = ({ date }) => {
-  const month = date.toLocaleString("ens-US", { month: "long" });
-  const day = date.toLocaleString("en-Us", { day: "2-digit" });
+  const month = date.toLocaleString('ens-US', { month: 'long' });
+  const day = date.toLocaleString('en-Us', { day: '2-digit' });
   const year = date.getFullYear();
 
   return (
-    <div className="expense-date">
-      <div className="expense-date__month ">{month}</div>
-      <div className="expense-date__day">{day}</div>
-      <div className="expense-date__year">{year}</div>
+    <div className={classes['expense-date']}>
+      <div className={classes['expense-date__month ']}>{month}</div>
+      <div className={classes['expense-date__day']}>{day}</div>
+      <div className={classes['expense-date__year']}>{year}</div>
     </div>
   );
-}
+};
 
 export default ExpenseDate;

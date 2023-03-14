@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // styles
-import './ExpenseForm.css';
+import classes from './ExpenseForm.module.css';
 
 const ExpenseForm = ({ onSaveExpenseData, onCloseForm }) => {
   const [enteredTitle, setEnteredTitle] = useState('');
@@ -42,8 +42,8 @@ const ExpenseForm = ({ onSaveExpenseData, onCloseForm }) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div className='new-expense__controls'>
-        <div className='new-expense__control'>
+      <div className={classes['new-expense__controls']}>
+        <div className={classes['new-expense__control']}>
           <label htmlFor=''>Title</label>
           <input
             type='text'
@@ -52,7 +52,7 @@ const ExpenseForm = ({ onSaveExpenseData, onCloseForm }) => {
           />
         </div>
 
-        <div className='new-expense__control'>
+        <div className={classes['new-expense__control']}>
           <label htmlFor=''>Amount</label>
           <input
             type='number'
@@ -63,7 +63,7 @@ const ExpenseForm = ({ onSaveExpenseData, onCloseForm }) => {
           />
         </div>
 
-        <div className='new-expense__control'>
+        <div className={classes['new-expense__control']}>
           <label htmlFor=''>Date</label>
           <input
             type='date'
@@ -74,7 +74,7 @@ const ExpenseForm = ({ onSaveExpenseData, onCloseForm }) => {
           />
         </div>
       </div>
-      <div className='new-expense__actions'>
+      <div className={classes['new-expense__actions']}>
         <button onClick={cancelHandler}>Cancel</button>
         <button type='submit'>Add Expense</button>
       </div>

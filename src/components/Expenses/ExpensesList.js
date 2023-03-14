@@ -1,7 +1,7 @@
 import React from 'react';
 
 // styles
-import './ExpensesList.css';
+import classes from './ExpensesList.module.css';
 
 // components
 import ExpenseItem from './ExpenseItem';
@@ -11,7 +11,7 @@ const ExpensesList = ({ items }) => {
     return <h2 className='expenses-list__fallback'>Found no expenses.</h2>;
   }
   return (
-    <ul className='expenses-list'>
+    <ul className={classes['expenses-list']}>
       {items.map((expense) => (
         <ExpenseItem
           key={expense.id}

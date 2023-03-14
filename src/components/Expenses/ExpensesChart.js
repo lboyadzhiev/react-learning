@@ -1,7 +1,7 @@
 import React from 'react';
 
 // styles
-import './ExpensesChart.css';
+import classes from './ExpensesChart.module.css';
 
 // components
 import Chart from '../Chart/Chart';
