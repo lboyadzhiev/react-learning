@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import ExpenseDate from '../Expenses/ExpenseDate';
 
 // style
 import classes from './NewExpense.module.css';
+
+// custom hooks
+import useServices from '../../hooks/use-services';
 
 // components
 import ExpenseForm from './ExpenseForm';
@@ -10,12 +12,26 @@ import ExpenseForm from './ExpenseForm';
 const NewExpense = ({ onAddExpense }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const saveExpenseDataHandler = (enteredExpenseData) => {
+  const { isLoading, error, sendRequest: sendExpense } = useServices();
+
+  const createExpense = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
     };
 
     onAddExpense(expenseData);
+  };
+
+  const enterExpenseHandler = async (expense) => {
+    sendExpense(
+      {
+        url: 'https://expenses-2f187-default-rtdb.firebaseio.com/expenses.json',
+        method: 'POST',
+        header: { 'Content-Type': 'application/json' },
+        body: expense,
+      },
+      createExpense(expense)
+    );
   };
 
   const closeFormHandler = () => {
@@ -30,7 +46,7 @@ const NewExpense = ({ onAddExpense }) => {
     <div className={classes['new-expense']}>
       {isOpen && (
         <ExpenseForm
-          onSaveExpenseData={saveExpenseDataHandler}
+          onSaveExpenseData={enterExpenseHandler}
           onCloseForm={closeFormHandler}
         />
       )}
