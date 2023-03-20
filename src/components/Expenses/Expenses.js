@@ -9,7 +9,7 @@ import ExpenseFilter from './ExpenseFilter';
 import ExpensesChart from './ExpensesChart';
 import Card from '../UI/Card';
 
-const Expenses = ({ expenses }) => {
+const Expenses = ({ expenses, isLoading, error }) => {
   const [filteredYear, setFilteredYear] = useState('2023');
 
   const filterChangeHandler = (selectedYear) => {
@@ -29,7 +29,9 @@ const Expenses = ({ expenses }) => {
         onChangeFilter={filterChangeHandler}
       />
       <ExpensesChart expenses={filteredExpenses} />
-      <ExpensesList items={filteredExpenses} />
+      {isLoading && <p className={classes.sideMessage}>Loading...</p>}
+      {!isLoading && !error && <ExpensesList items={filteredExpenses} />}
+      {!isLoading && error && <p className={classes.sideMessage}>{error}</p>}
     </Card>
   );
 };
