@@ -82,4 +82,39 @@ Adding Basic CSS styling
 
 	Dynamic content
 
-		We can store JSX conten in variable;c
+		We can store JSX conten in variable;
+
+	============= WORKING WITH FORMS ===========
+
+	What is Complex About Froms?
+
+    Forms and inputs can assume different sates:
+
+        1. One or more inputs are invalid
+
+            -- Output input-specific error messages & highlight problems inputs;
+            -- Ensure form can't be submitted;
+
+        2. All inputs are valid
+
+			-- Allow form to be submited / saved;
+
+	When To Validate?
+
+		1. When form is submited;
+
+			-- Allows the user to enter a valid value before warning his/her;
+			-- This avoid unnecessary warnings but maybe present feedback 'too late';
+
+		2. When a input is losing focus;
+
+			-- Allows the user to enter a valid value before warning him / her;
+			-- This is useful for untouched forms - where the user hasn't add anything yet;
+
+		3. On every keystroke;
+
+			-- Warns user before he / she had a chance of entering valid values;
+			-- If applied only on invalid inputs, has the potential of providing more direct feedback;
+
+		
+
