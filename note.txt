@@ -116,5 +116,11 @@ Adding Basic CSS styling
 			-- Warns user before he / she had a chance of entering valid values;
 			-- If applied only on invalid inputs, has the potential of providing more direct feedback;
 
+
+	============ HTTP ==========================
+
+	We are not allowed to pass an async function to a useEffect. 
+	If we throw an error in a promise, this couse promise to reject.
+
 		
 

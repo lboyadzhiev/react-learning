@@ -1,0 +1,94 @@
+Arrays
+
+Which method do use when working with Arrays?
+
+Start with a question: 
+
+    What we want to do:
+
+        Mutate the original array?
+
+            -- Add to orinial:
+
+                .push() - (end);
+                .unshift() - (start);
+
+            -- Remove from original:
+
+                .pop() - (end);
+                .shift() - (start);
+                .splice() - (any);
+
+            -- Others:
+
+                .reverse();
+                .sort();
+                .fill()l;
+
+        Create a new array?
+
+            -- Computed from original:
+
+                .map();
+            
+            -- Filtered using condition:
+
+                .filter();
+
+            -- Portion of original:
+
+                .slice();
+
+            -- Adding original to other:
+
+                .concat();
+
+            -- Flattening the original:
+
+                .flat();
+                .flatMap();
+
+        Retrieve an array index?
+
+            -- Based on value:
+
+                .indexOf();
+
+            -- Based on test condition:
+
+                .findIndex();
+
+        Retrieve an entryre array element?
+
+            -- Based on test condition:
+
+                .find();
+
+        Know if array includes a sertain element?
+
+            -- Based on value:
+
+                .includes();
+
+            -- Based on test condition:
+
+                .some();
+                .every();
+
+        Get a new string?
+
+            -- Based on separator string:
+
+                .join();
+
+        To transform to value?
+
+            -- Based on accumulator:
+
+                .reduce() - boil down array to single value of any type;
+
+        To loop over the array?
+
+            -- Based on callback:
+
+                .forEach() - Does not create a new array just loop overt it, and it is not retunr any value;
