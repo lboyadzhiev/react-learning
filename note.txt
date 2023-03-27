@@ -122,5 +122,130 @@ Adding Basic CSS styling
 	We are not allowed to pass an async function to a useEffect. 
 	If we throw an error in a promise, this couse promise to reject.
 
+
+	============ TESTING ==============================
+
+	What is 'Testing" and Why?
+
+		-- Manual Testing
+
+			Erro-prone: It's hard to test all possible combinations and scenarios
+
+		-- Automated Testing
+
+			Write code that tests the rest of the code.
+			We test the individual building blocks of our app.
+			Very technical but allows us to test ALL building blocks at once.
+
+	Different Kind Of Automated Tests
+		
+		-- Unit Tests;
+
+			Writing test for smallest units. Test the individual blocks (functions, components) in isolation;
+			Projects typically contain dozens or hundreds of unit test;
+			The most common / important kind of test;
+
+		-- Integration Test;
+
+			Test the combination of multiple building blocks;
+			Projects typically contain a couple of integration tests;
+			Also important, but focus on unit tests in most cases;
+
+		-- End-to-End (e2e) Tests;
+
+			Test complete scenarios in our app as the user would experience them;
+			Projects typically contain only a few e2e tests;
+			Important but can also be done manually (partially);
+
+
+	Understanding Unit Tests
+
+		What To Test + How?
+
+		-- What to test:
+
+			Test the different building blocks;
+			Unit Tests: The smallest building blocks that make up our app;
+
+		-- How:
+
+			Test success and error cases, also test rare(but possible) results;
+
+		Understanding the Technical Setup & Involved Tools
+
+			-- We need a tool for running our tests and asserting the results;
+
+				We use 'jest', is no the only tool but is very popular and is easy to use with React;
+
+			-- We need a tool for 'simulating' (rendering) our Reac app / components;
+
+				We use a React Testing Library;
+
+			-- Both tools are already set up for us when using 'create-react-app';
+
+	Testing React Components & Building Blocks
+
+		-- Writing tests
+
+			Convension:
+
+				Write the test as close as possible to the thing we want to test!!!!!
+
+				We start writing our test with 'test()' function which is global available, we don't neet to import it. It takes two arguments.
+
+					The frist argument we give a test descrition, the second argument is anonymus function which contains the actual testing code.
+					In this function we typically want to do 3 things - the three 'A's:
+
+						1. Arrange	-> Set up the test data, test conditions and test environment;
+						2. Act 		-> Run logic that should be tested (e.g. execute function);
+						3. Assert 	-> Compare execution results with expected results;
+
+			Grouping Tests Together With Test Suits
+
+				We orginizing the test in different test suits. We are creating testing suits by using globally describe function - 'describe()';
+
+				describe()
+
+					We give two arguments:
+
+						1. Description - different category in which this test belong to;
+						2. also anonomys function and put different test in there;
+
+				'userEvent()' 
+
+					need to import - it is object which helps us trigger user events in the virtual screen.
+
+			Testing Connected Components
+
+				There is no need to split the test in the conjunction components, if there is no different block logic;
+
+			Testing Asynchronous code
+
+				To work with async funtions we need to use 'find' queries instead of 'get', find returns a promise. With the find method we have a third argument - it specify a time to wait, by default it is 1second.
+
+				And in order this to work we need to pass an async function as second argument in test function, and put await before 'find' method.
+
+			Working With Mocks
+
+				When we run our test we don't want to send http request to our servers (we run alot of test), and it will caouse alot of network trafic. And if we make an post request it will start filling  or changind staff in our database, which we don't want.
+
+				When we run our test, we want no to send request to the servers or send request to some test server. 
+
+				We can replace the fetch function with 'mock' function - dummy function;
+
+					We can do this with 
+
+						window.fetch = 'jest.fn()'
+						window.fetch.mockResolvedValueOnce({
+							json: async () => [{id: 'p1', title: 'First post'}]
+						})
+
+					By this way we are simulating a success, and we are no sending an api request.
+
+			
+
+
+
+		-- To run tests in React we have alreacy done command - 'npm test';
 		
 
