@@ -4,7 +4,7 @@ import React from 'react';
 import classes from './ExpensesChart.module.css';
 
 // components
-import Chart from '../Chart/Chart';
+import Chart from '../../Chart/Chart';
 
 const ExpensesChart = ({ expenses }) => {
   const chartDataPoints = [

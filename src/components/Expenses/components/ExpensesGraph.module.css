@@ -1,0 +1,8 @@
+.graph {
+  background-color: #282c34;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  background-image: linear-gradient(black, red);
+}

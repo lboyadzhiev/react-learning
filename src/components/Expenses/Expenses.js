@@ -4,9 +4,10 @@ import React, { useState } from 'react';
 import classes from './Expenses.module.css';
 
 // components
-import ExpensesList from './ExpensesList';
-import ExpenseFilter from './ExpenseFilter';
-import ExpensesChart from './ExpensesChart';
+import ExpensesList from './components/ExpensesList';
+import ExpenseFilter from './components/ExpenseFilter';
+import ExpensesChart from './components/ExpensesChart';
+import ExpensesGraph from './components/ExpensesGraph';
 import Card from '../UI/Card';
 
 const Expenses = ({ expenses, isLoading, error }) => {
@@ -28,7 +29,8 @@ const Expenses = ({ expenses, isLoading, error }) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      <ExpensesChart expenses={filteredExpenses} />
+      {/* <ExpensesChart expenses={filteredExpenses} /> */}
+      <ExpensesGraph />
       {isLoading && <p className={classes.sideMessage}>Loading...</p>}
       {!isLoading && !error && <ExpensesList items={filteredExpenses} />}
       {!isLoading && error && <p className={classes.sideMessage}>{error}</p>}
