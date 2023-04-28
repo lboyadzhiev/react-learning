@@ -247,5 +247,121 @@ Adding Basic CSS styling
 
 
 		-- To run tests in React we have alreacy done command - 'npm test';
-		
+
+	==================== STATES REDUX ====================================
+
+	What Is Cross-Component / App-Wide State?
+
+		1. Local State;
+
+			-- State that belongs to a single component;
+			-- E.g. listening to user input in a input field, toggling a 'show more' details field;
+			-- Should be  managed component-internal with 'useState() / useReducer()'
+
+		2. Cross-Component State;
+
+			-- State that affects multiple components;
+			-- E.g. open/close state of a modal overlay;
+			-- Requires 'prop chains' / 'props drilling';
+
+		3. App-Wide State
+
+			-- State that affects the entire app (most/ all components);
+			-- E.g. user authentication status;
+			-- Requeres 'prop chains' / 'prop drilling';
+
+	Redux vs React Context
+
+		React Context - Potential Disadvantages
+
+			1. Complex Setup / Management;
+
+				-- In more complex apps, managing React Context can lead to deeply nested JSX code and/or huge 'Context Provider' components;
+
+			2. Performance;
+
+				-- React Context is not optimized for high-frequency state changes;
+
+		Redux is state management system for cross-component or app-wide state.
+
+		Core Redux Concepts
+
+			With Redux we have:
+				1. Cetral Data Store(State);
+
+				2. Components;
+
+					-- setup subscription to that store;
+					-- NEVER directrly manipulate the store data;
+
+				3. Reducer Fucntion;
+
+					 -- it is responsible for mutating the data in the store
+
+				4. Action
+
+					-- it's JS object wich describes what kind of operationg the reducer should perform;
+
+		Exploring The Core Redux Concepts
+
+			1. We need to install Redux;
+
+				-- 'npm install redux'
+
+			2. Import Redux;
+
+					<script>
+						import redux from 'redux' / const reudx = require('redux');
+					</script>
+				
+			3. Create Store
+
+					<script>
+						const store = redux.createStore();
+					</script>
+
+			4. Create Reduser function
+
+					<script>
+						const counterReducer = (state = {counter: 0}, action) => {
+
+							if(action.type === 'increment') {
+								return {
+									counter: state.counter + 1;
+							};
+
+							return state;
+						}
+					</script>
+
+				-- Reducer function is standart Js functon but will be called from redux library. 
+				It will receive two pieces of input (parameters):
+
+					1. The old or existing state;
+					2. The action wich will be dispatched
+
+				-- And then the reducer functio should return the new state object, and will overwrite the existing state.
+				-- The reducer function should be pure function:
+
+					-- Same input leads to same output, no sideffects (no http req, write something to local storage).
+
+			5. Need someone who subscribes to that store. Let's create the subscription;
+
+				<script>
+					const counterSubscriber = () => {
+						const latesState = store.getState();
+					}
+				</script>
+
+			6. Make Redux aware of this subscription function:
+
+				<script> 
+					store.subscribe(counterSubscriber)
+				</script>
+				
+			7. Create and dispatch an action
+
+				<script> 
+					store.dispatch({type: 'increment'})
+				</script>
 
